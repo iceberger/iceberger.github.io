@@ -1,40 +1,20 @@
-Hello World
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
+<body>
 
 
-<link rel="icon" type="image/png" href="/images/button.jpeg" />
+  <img src="images/transparent.jpg" alt="burger" style="height:100px">
+
+  <table width=100% height=100%>
+      <tr>
+          <td style="text-align: center; vertical-align: middle; text-align: center; ">
+            <img src="images/ice.png" alt="ice" style="width:18%">
+            <img src="images/burger.jpg" alt="burger" style="width:20%">
+          </td>
+      </tr>
+  </table>
 
 
-<noscript>Please enable Javascript to view this page correctly.</noscript>
-<script type="text/javascript" src="/src/brython.js"></script>
 
-
-
-<script type="text/python3">
-"""Code for the header menu"""
-from browser import document, html
-import header
-
-qs_lang, language = header.show()
-
-document["content"].html = document[f"content_{language}"].html
-
-if qs_lang:
-    document[f"c_{qs_lang}"].href += f"?lang={qs_lang}"
-
-def ch_lang(ev):
-    sel = ev.target
-    new_lang = sel.options[sel.selectedIndex].value
-    document.location.href = f"index.html?lang={new_lang}"
-
-for elt in document.select("select.language"):
-    elt.bind('change', ch_lang)
-
-# underline links in page text, but not in the upper banner
-for elt in document.select("a"):
-    if not elt.classList.contains("banner"):
-        elt.style.textDecoration = "underline"
-</script>
+</body>
+</html>
